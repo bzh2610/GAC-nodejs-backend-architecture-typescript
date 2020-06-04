@@ -10,7 +10,11 @@ import writer from './blog/writer';
 import editor from './blog/editor';
 import user from './profile/user';
 
+import createApiKey from './access/apikey';
+
 const router = express.Router();
+
+router.use('/apikey', createApiKey);
 
 /*-------------------------------------------------------------------------*/
 // Below all APIs are public APIs protected by api-key
@@ -18,7 +22,7 @@ router.use('/', apikey);
 /*-------------------------------------------------------------------------*/
 
 router.use('/signup', signup);
-router.use('/login', login);
+router.use('/login2', login);
 router.use('/logout', logout);
 router.use('/token', token);
 router.use('/blogs', blogList);
